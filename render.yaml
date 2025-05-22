@@ -1,0 +1,7 @@
+services:
+  - type: worker
+    name: nse-screener
+    runtime: python
+    buildCommand: ""
+    startCommand: "python main.py"
+    plan: free
