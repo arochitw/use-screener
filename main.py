@@ -103,8 +103,12 @@ def scheduled_job():
     print("[INFO] Running scheduled job at 9:08 AM...")
     fetch_nse_preopen_data()
 
+# if __name__ == "__main__":
+#     scheduler = BlockingScheduler(timezone="Asia/Kolkata")
+#     scheduler.add_job(scheduled_job, 'cron', hour=9, minute=8)
+#     print("[⏱️] Scheduler started. Waiting for 9:08 AM IST...")
+#     scheduler.start()
 if __name__ == "__main__":
-    scheduler = BlockingScheduler(timezone="Asia/Kolkata")
-    scheduler.add_job(scheduled_job, 'cron', hour=9, minute=8)
-    print("[⏱️] Scheduler started. Waiting for 9:08 AM IST...")
-    scheduler.start()
+    print("[INFO] Starting script manually (no scheduler)...")
+    fetch_nse_preopen_data()
+    print("[INFO] Script finished.")
